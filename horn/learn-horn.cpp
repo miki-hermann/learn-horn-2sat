@@ -33,6 +33,7 @@ Formula learn_horn_formula () {
   for (Row f : negativeF) {
     if (in_horn_closure(f, positiveT)) {
       cerr << "+++ negative example present in Horn closure of T" << endl;
+      cerr << "+++ the negative culprit is '" << f << "'" << endl;
       exit(2);
     }
 
