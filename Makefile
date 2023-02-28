@@ -1,4 +1,4 @@
-.PHONY all compile install
+.PHONY: all compile install
 
 all: compile install
 
