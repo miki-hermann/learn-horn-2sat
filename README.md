@@ -41,7 +41,7 @@ are not specified. If the user requires output in LaTeX form, it can
 be done using the `-l` option followed by the target filename.  The
 `-p` option allows to specify the print indicator: either `clause` or
 `impl`, depending if you want to see the clauses written as clauses or
-implications, respectively.
+implications, respectively. The default is `clause`.
 
 There exist two versions of the Horn closure algorithm:
 `horn-closure-v1` and `horn-closure-v2`. Two different strategies are
@@ -63,7 +63,7 @@ are not specified. If the user requires output in LaTeX form, it can
 be done using the `-l` option followed by the target filename. The
 `-p` option allows to specify the print indicator: either `clause` or
 `impl`, depending if you want to see the clauses written as clauses or
-implications, respectively.
+implications, respectively. The default is `clause`.
 
 ## Compilation and Installation
 * [Compilation](#compilation)
