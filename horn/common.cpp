@@ -112,10 +112,8 @@ void adjust_and_open (string &command) {	// adjust input parameters
 Row min (const Row &a, const Row &b) {
   // computes the minimum of two tuples by coordinates
   Row c;
-  for (int i = 0; i < a.size(); ++i) {
-    unsigned cc = a[i] <= b[i] ? a[i] : b[i];
-    c.push_back(cc);
-  }
+  for (int i = 0; i < a.size(); ++i)
+    c.push_back(min(a[i], b[i]));
   return  c;
 }
 
