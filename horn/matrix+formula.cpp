@@ -10,11 +10,11 @@ using namespace std;
 Matrix positiveT;	// positive examples
 Matrix negativeF;	// negative examples
 
-string varid = "x";	// variable prefix
-char delim   = ',';	// delimiter
-int DCARD    = 0;	// domain cardinality
-Print print  = pCLAUSE;	// formula print indicator
-int arity    = 0;	// arity of rows
+string varid       = "x";	// variable prefix
+char delim         = ',';	// delimiter
+unsigned int DCARD = 0;		// domain cardinality
+Print print        = pCLAUSE;	// formula print indicator
+int arity          = 0;		// arity of rows
 
 //------------------------------------------------------------------------------
 
@@ -87,7 +87,7 @@ string impl2string (const Clause &clause) {
   return output;
 }
 
-string clause2string (const Clause &clause) {
+string to_string (const Clause &clause) {
   string output = "(";
   if (print == pCLAUSE)
     output += rlcl2string(clause);
@@ -107,7 +107,7 @@ string to_string (const Formula &formula) {
   for (Clause clause : formula) {
     output += (times) ? "\n\t* " : "\t  ";
     times = true;
-    output += clause2string(clause);
+    output += to_string(clause);
   }
   return output;
 }
@@ -215,13 +215,13 @@ string to_string (const Row &r) {
   return rstrg;
 }
 
-string to_string (const Literal &l) {
-  return to_string(l.sign) + ":" + to_string(l.pval) + ":" + to_string(l.nval);
-}
+// string to_string (const Literal &l) {
+//   return to_string(l.sign) + ":" + to_string(l.pval) + ":" + to_string(l.nval);
+// }
 
-string to_string (const Clause &c) {
-  string cstrg = to_string(c[0]);
-  for (int i = 1; i < c.size(); ++i)
-    cstrg += "*" + to_string(c[i]);
-  return cstrg;
-}
+// string to_string (const Clause &c) {
+//   string cstrg = to_string(c[0]);
+//   for (int i = 1; i < c.size(); ++i)
+//     cstrg += "*" + to_string(c[i]);
+//   return cstrg;
+// }

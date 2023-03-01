@@ -13,6 +13,8 @@ void read_input () {
     Row m = split(line, delim);
     unsigned example = m.front();
     m.pop_front();
+    for (int i = 0; i < m.size(); ++i)
+      DCARD = min(DCARD, m[i]+1);
     if (arity == 0)
       arity = m.size();
     if (example > 1) {
@@ -36,7 +38,6 @@ Formula learn_horn_formula () {
       cerr << "+++ the negative culprit is '" << f << "'" << endl;
       exit(2);
     }
-
     Clause c;
     for (int i = 0; i < arity; ++i) {
       Sign sign = f[i] > 0 ? lneg : lnone;

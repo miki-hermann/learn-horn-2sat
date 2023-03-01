@@ -54,7 +54,7 @@ extern Matrix negativeF;	// negative examples
 
 extern string varid;		// variables prefix
 extern char delim;		// delimiter
-extern int DCARD;		// domain cardinality
+extern unsigned int DCARD;	// domain cardinality
 extern Print print;		// formula print indicator
 extern int arity;		// arity of rows
 
@@ -67,5 +67,5 @@ ostream& operator<< (ostream &output, const Row &row);
 ostream& operator<< (ostream &output, const Matrix &M);
 bool operator>= (const Row &lhs, const Row &rhs);
 string to_string (const Row &r);
-string to_string (const Literal &l);
+// string to_string (const Literal &l);
 string to_string (const Clause &c);
