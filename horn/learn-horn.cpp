@@ -14,7 +14,7 @@ void read_input () {
     unsigned example = m.front();
     m.pop_front();
     for (int i = 0; i < m.size(); ++i)
-      DCARD = min(DCARD, m[i]+1);
+      DCARD = max(DCARD, m[i]+1);
     if (arity == 0)
       arity = m.size();
     if (example > 1) {
