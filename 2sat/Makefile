@@ -1,4 +1,4 @@
-.PHONY: compile install clean scratch github
+.PHONY: compile install clean scratch
 
 compile: learn-2sat
 

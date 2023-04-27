@@ -107,9 +107,16 @@ parts. You can find them in the directory `examples` The test files
 algorithms run correctly and also serve as examples how to write the
 input.
 
-There is another, much more sophisticated example from `kaggle`
-present in the Horn part, but it needs some preprocessing. The file
-`digit.csv.xz` contains compressed data for recognition of digits.
+The file `graph24000.csv` contains 24,000 lines indicating the
+presence (by a leading 1) or absence (by a leading 0) of an arc in an
+oriented graph, where each node is labeled by a number. The task is to
+construct a formula recognizing the graph. Surprisingly, a 2SAT
+formula with 65 clauses is sufficient.
+
+In the Horn part, there is another, much more sophisticated example
+from `kaggle` present in the Horn part, but it needs some
+preprocessing. The file `digit.csv.xz` contains compressed data for
+recognition of digits.
 
 Compile the digit treatment by `make example` in the Horn part, then
 run the command `digit`. This command will ask you to choose the digit
