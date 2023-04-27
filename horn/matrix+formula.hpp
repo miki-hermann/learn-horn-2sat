@@ -10,8 +10,10 @@ using namespace std;
 
 typedef deque<unsigned> Row;
 typedef set<Row> Matrix;
+#define CARDlimit 50
 
 enum Print {pVOID = 0, pCLAUSE = 1, pIMPL = 2};
+const string print_string[] = {"void", "clause", "implication"};
 
 enum Sign {lnone = 0, lneg = 1, lpos = 2, lboth = 3};
 class Literal {	// variable <= nval or variable >= pval

@@ -46,6 +46,7 @@ void read_arg (int argc, char *argv[]) {	// reads the input parameters
 	   << " [-i <input file>]"
 	   << " [-o <output file>]"
 	   << " [-l <latex-output-file>]"
+	   << " [-m <CSV-output-file>]"
 	   << " [-c <domain cardinality>]"
 	   << " [-p <print indicator>]"
 	   << endl;
@@ -107,6 +108,16 @@ void adjust_and_open (string &command) {	// adjust input parameters
     cerr << "+++ domain cardinality cannot be unspecified or smaller than 2" << endl;
     exit(1);
   }
+}
+
+void print_arg () {
+  cout << "@@@ input              = " << input  << endl;
+  cout << "@@@ output             = " << output << endl;
+  cout << "@@@ domain cardinality = " << DCARD  << endl;
+  cout << "@@@ formula output     = " << print_string[print] << endl;
+  if (latex.length() > 0)
+    cout << "@@@ LaTeX output       = " << latex << endl;
+  cout << endl;
 }
 
 Row min (const Row &a, const Row &b) {

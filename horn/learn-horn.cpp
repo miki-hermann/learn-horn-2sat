@@ -73,11 +73,30 @@ int main (int argc, char **argv) {
   read_arg(argc, argv);
   string command = argv[0];
   adjust_and_open(command);
+  print_arg();
   read_input();
+  cout << "+++ " << positiveT.size() << " positive examples" << endl;
+  cout << "+++ " << negativeF.size() << " negative examples" << endl;
+  cout << "+++ arity = " << arity << endl << endl;
+  if (positiveT.size() <= CARDlimit) {
+    cout << "+++ positive examples T:" << endl;
+    cout << positiveT << endl;
+  }
+  if (negativeF.size() <= CARDlimit) {
+    cout << "+++ negative examples F:" << endl;
+    cout << negativeF << endl;
+  }
+
   Formula varphi = learn_horn_formula();
+  cout << "+++ produced Horn formula:" << endl;
   cout << to_string(varphi) << endl;
+  unsigned ncl = varphi.size();
+  cout << endl
+       << "+++ Horn formula has " << ncl
+       << (ncl == 1 ? " clause" : " clauses") << endl;
   if (!latex.empty())
     latexfile << to_latex(varphi) << endl;
-}
+
+  cout << endl << "+++ end of run" << endl;}
 
 ////////////////////////////////////////////////////////////////////////////////

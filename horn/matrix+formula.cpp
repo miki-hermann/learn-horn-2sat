@@ -184,6 +184,8 @@ string to_latex (const Formula &formula) {
   return output;
 }
 
+//------------------------------------------------------------------------------
+
 ostream& operator<< (ostream &output, const Row &row) {
   // overloading ostream to print a row
   // transforms a tuple (row) to a printable form
