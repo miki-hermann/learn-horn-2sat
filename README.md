@@ -109,8 +109,8 @@ input.
 
 The file `graph24000.csv` contains 24,000 lines indicating the
 presence (by a leading 1) or absence (by a leading 0) of an arc in an
-oriented graph, where each node is labeled by a number. The task is to
-construct a formula recognizing the graph. Surprisingly, a 2SAT
+oriented graph, where each vertex is labeled by a number. The task is
+to construct a formula recognizing the graph. Surprisingly, a 2SAT
 formula with 65 clauses is sufficient.
 
 In the Horn part, there is another, much more sophisticated example
