@@ -16,10 +16,10 @@ Horn and 2SAT formulas, as well as the algorithm for constructing the
 Horn closure of a set of vectors.
 
 Both learning algorithms produce the learned Horn or 2SAT formulas,
-respectively, from positive and negative examples. Each example is a
+respectively, from positive and negative samples. Each sample is a
 vectors of positive integer values separated by commas, preceded by an
 indicator (first value on the line). The leading indicator is 0 for a
-negative example and 1 for a positive example.
+negative sample and 1 for a positive sample.
 
 Detailed description of the algorithms together with the syntax of
 produced formulas is in the file `paper.pdf`.
