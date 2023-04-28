@@ -184,20 +184,6 @@ string to_latex (const Formula &formula) {
   return output;
 }
 
-// string to_machine (const Clause &clause) {
-//   // coordinate, sign, value, coordinate, sign, value
-//   string output;
-
-//   for (int i = X; i <= Y; ++i) {
-//     output += "x" + to_string(clause[i].coord);
-//     output += " " + sign_string.at(clause[i].sign) + " ";
-//     output += to_string(clause[i].val);
-//     if (i == X)
-//       output += " + ";
-//   }
-//   return output;
-// }
-
 string to_machine (const Clause &clause) {
   string output;
   bool plus = false;
