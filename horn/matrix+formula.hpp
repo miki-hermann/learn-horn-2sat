@@ -65,6 +65,7 @@ extern int arity;		// arity of rows
 deque<unsigned> split (const string &strg, char delimiter);
 string to_string (const Formula &formula);
 string to_latex (const Formula &formula);
+string to_machine (const Formula &);
 ostream& operator<< (ostream &output, const Row &row);
 ostream& operator<< (ostream &output, const Matrix &M);
 bool operator>= (const Row &lhs, const Row &rhs);

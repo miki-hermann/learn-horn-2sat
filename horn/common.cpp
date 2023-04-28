@@ -17,10 +17,12 @@ const string STDOUT = "STDOUT";
 string input        = STDIN;
 string output       = STDOUT;
 string latex        = "";		// file to store latex output
+string machine      = "";		// machine readable CSV file
 
 ifstream infile;
 ofstream outfile;
 ofstream latexfile;
+ofstream machinefile;
 
 //------------------------------------------------------------------------------
 
@@ -37,6 +39,9 @@ void read_arg (int argc, char *argv[]) {	// reads the input parameters
     else if (arg == "--latex"
 	     || arg == "-l")
       latex = argv[++argument];
+    else if (arg == "--machine"
+	     || arg == "-m")
+      machine = argv[++argument];
     else if (arg == "--card"
 	     || arg == "-c")
       DCARD = stoi(argv[++argument]);
@@ -104,6 +109,18 @@ void adjust_and_open (string &command) {	// adjust input parameters
     }
   }
 
+  if (machine.length() > 0) {
+    if (machine.find(".") == string::npos
+	|| machine.length() < 4
+	|| machine.substr(machine.length()-4) != ".mvc")
+      machine += ".mvc";
+    machinefile.open(machine);
+    if (!machinefile.is_open()){
+      cerr << "+++ Cannot open machine-readble CSV file " << machine << endl;
+      exit(2);
+    }
+  }
+
   if (command.substr(0,6) == "online" && DCARD < 2) {
     cerr << "+++ domain cardinality cannot be unspecified or smaller than 2" << endl;
     exit(1);
@@ -117,6 +134,8 @@ void print_arg () {
   cout << "@@@ formula output     = " << print_string[print] << endl;
   if (latex.length() > 0)
     cout << "@@@ LaTeX output       = " << latex << endl;
+  if (machine.length() > 0)
+    cout << "@@@ CSV output         = " << machine << endl;
   cout << endl;
 }
 

@@ -184,6 +184,52 @@ string to_latex (const Formula &formula) {
   return output;
 }
 
+// string to_machine (const Clause &clause) {
+//   // coordinate, sign, value, coordinate, sign, value
+//   string output;
+
+//   for (int i = X; i <= Y; ++i) {
+//     output += "x" + to_string(clause[i].coord);
+//     output += " " + sign_string.at(clause[i].sign) + " ";
+//     output += to_string(clause[i].val);
+//     if (i == X)
+//       output += " + ";
+//   }
+//   return output;
+// }
+
+string to_machine (const Clause &clause) {
+  string output;
+  bool plus = false;
+  for (int lit = 0; lit < clause.size(); ++lit) {
+    if (clause[lit].sign & lneg) {
+      if (plus)
+	output += " + ";
+      else
+	plus = true;
+      output += literal2string(lit, lneg, clause[lit].nval);      
+    }
+    if (clause[lit].sign & lpos) {
+      if (plus)
+	output += " + ";
+      else
+	plus = true;
+      output += literal2string(lit, lpos, clause[lit].pval);      
+    }
+  }
+  return output;
+}
+
+string to_machine (const Formula &formula) {
+  if (formula.empty())
+    return " ";
+
+  string output;
+  for (Clause clause : formula)
+    output += to_machine(clause) + "\n";
+  return output;
+}
+
 //------------------------------------------------------------------------------
 
 ostream& operator<< (ostream &output, const Row &row) {

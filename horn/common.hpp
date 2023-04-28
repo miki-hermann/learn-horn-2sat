@@ -14,10 +14,12 @@ extern const string STDOUT;
 extern string input;
 extern string output;
 extern string latex;		// file to store latex output
+extern string machine;		// machine readable CSV output
 
 extern ifstream infile;
 extern ofstream outfile;
 extern ofstream latexfile;
+extern ofstream machinefile;
 
 //--------------------------------------------------------------------------------------------------
 

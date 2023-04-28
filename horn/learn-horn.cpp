@@ -96,6 +96,8 @@ int main (int argc, char **argv) {
        << (ncl == 1 ? " clause" : " clauses") << endl;
   if (!latex.empty())
     latexfile << to_latex(varphi) << endl;
+  if (!machine.empty())
+    machinefile << to_machine(varphi);
 
   cout << endl << "+++ end of run" << endl;}
 
