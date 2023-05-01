@@ -124,5 +124,13 @@ run the command `digit`. This command will ask you to choose the digit
 `digitd.csv` for the chosen digit `d`. Use it as input for the
 algorithms.
 
+The following list of examples is adapted from [UCI Machine Learning
+Repository](http://archive.ics.uci.edu/ml/) and prepared to be treated
+by learning aforemented learning algorithms:
+
+ - **accent-fr**          (English speakers wth French accent),
+ - **banknotes**          (non-forget banknotes recognition),
+ - **divorce**            (divorce prediction),
+ - **letter-recognition** (recognition of letter A),
 
 EOF
