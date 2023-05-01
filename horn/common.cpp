@@ -149,18 +149,39 @@ Row min (const Row &a, const Row &b) {
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+bool operator|= (const Row &t, const Clause &c) {	// does t |= c ?
+  bool satisfied = false;
+  for (int i = 0; i < c.size(); ++i)
+    if (c[i].sign & lpos && t[i] >= c[i].pval
+	||
+	c[i].sign & lneg && t[i] <= c[i].nval) {
+      satisfied = true;
+      break;
+    }
+  return satisfied;
+}
+
+bool operator|= (const Row &t, const Formula &f) {	// does t |= f ?
+  for (Clause c : f)
+    if (! (t |= c))
+      return false;
+  return true;
+}
+
 bool operator|= (const Matrix &T, const Clause &c) {	// does T |= c ?
   for (Row t : T) {
-    bool satisfied = false;
-    for (int i = 0; i < c.size(); ++i)
-      if (c[i].sign & lpos && t[i] >= c[i].pval
-	  ||
-	  c[i].sign & lneg && t[i] <= c[i].nval) {
-	satisfied = true;
-	break;
-      }
-    if (!satisfied)
+    if (! (t |= c))
       return false;
+    // bool satisfied = false;
+    // for (int i = 0; i < c.size(); ++i)
+    //   if (c[i].sign & lpos && t[i] >= c[i].pval
+    // 	  ||
+    // 	  c[i].sign & lneg && t[i] <= c[i].nval) {
+    // 	satisfied = true;
+    // 	break;
+    //   }
+    // if (!satisfied)
+    //   return false;
   }
   return true;
 }
