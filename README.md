@@ -128,6 +128,7 @@ by learning aforemented learning algorithms:
  - **banknotes**          (non-forget banknotes recognition),
  - **divorce**            (divorce prediction),
  - **letter-recognition** (recognition of letter A),
+ - **shuttle** ([shuttle dataset](https://archive.ics.uci.edu/ml/datasets/Statlog+(Shuttle)))
 
 In the Horn part, there is another, much more sophisticated example
 from `kaggle` present in the Horn part, but it needs some
