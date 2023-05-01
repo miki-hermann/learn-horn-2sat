@@ -130,7 +130,7 @@ by learning aforemented learning algorithms:
  - **letter-recognition** (recognition of letter A),
  - **shuttle** ([shuttle
    dataset](https://archive.ics.uci.edu/ml/datasets/Statlog+(Shuttle))
-   for testing bypass)
+   for recognizing bypass)
 
 In the Horn part, there is another, much more sophisticated example
 from `kaggle` present in the Horn part, but it needs some
