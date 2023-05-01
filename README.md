@@ -107,11 +107,28 @@ parts. You can find them in the directory `examples` The test files
 algorithms run correctly and also serve as examples how to write the
 input.
 
-The file `graph24000.csv` contains 24,000 lines indicating the
-presence (by a leading 1) or absence (by a leading 0) of an arc in an
-oriented graph, where each vertex is labeled by a number. The task is
-to construct a formula recognizing the graph. Surprisingly, a 2SAT
-formula with 65 clauses is sufficient.
+The several `diabetes` files are adapted from the [Pima Indians
+Diabetes
+Database](http://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database)
+and diagnostically predict whether or not a patient has diabetes,
+based on certain diagnostic measurements included in the original
+dataset.
+
+The file `graph24000.csv`, extracted from a much larger `kaggle`
+example, contains 24,000 lines indicating the presence (by a leading
+1) or absence (by a leading 0) of an arc in an oriented graph, where
+each vertex is labeled by a number. The task is to construct a formula
+recognizing the graph. Surprisingly, a 2SAT formula with 65 clauses is
+sufficient.
+
+The following list of examples is adapted from [UCI Machine Learning
+Repository](http://archive.ics.uci.edu/ml/) and prepared to be treated
+by learning aforemented learning algorithms:
+
+ - **accent-fr**          (English speakers wth French accent),
+ - **banknotes**          (non-forget banknotes recognition),
+ - **divorce**            (divorce prediction),
+ - **letter-recognition** (recognition of letter A),
 
 In the Horn part, there is another, much more sophisticated example
 from `kaggle` present in the Horn part, but it needs some
@@ -123,14 +140,5 @@ run the command `digit`. This command will ask you to choose the digit
 `d` which you want to recognize. The software produces a CSV file
 `digitd.csv` for the chosen digit `d`. Use it as input for the
 algorithms.
-
-The following list of examples is adapted from [UCI Machine Learning
-Repository](http://archive.ics.uci.edu/ml/) and prepared to be treated
-by learning aforemented learning algorithms:
-
- - **accent-fr**          (English speakers wth French accent),
- - **banknotes**          (non-forget banknotes recognition),
- - **divorce**            (divorce prediction),
- - **letter-recognition** (recognition of letter A),
 
 EOF
