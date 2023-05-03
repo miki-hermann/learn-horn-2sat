@@ -125,7 +125,7 @@ Repository](http://archive.ics.uci.edu/ml/) and prepared to be treated
 by learning aforemented learning algorithms:
 
  - **accent-fr**          (English speakers wth French accent),
- - **banknotes**          (non-forget banknotes recognition),
+ - **banknotes**          (non-forged banknotes recognition),
  - **divorce**            (divorce prediction),
  - **letter-recognition** (recognition of letter A),
  - **shuttle** ([shuttle
