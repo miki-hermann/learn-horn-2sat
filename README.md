@@ -133,9 +133,8 @@ by learning aforemented learning algorithms:
    for recognizing bypass)
 
 In the Horn part, there is another, much more sophisticated example
-from `kaggle` present in the Horn part, but it needs some
-preprocessing. The file `digit.csv.xz` contains compressed data for
-recognition of digits.
+from `kaggle`, but it needs some preprocessing. The file
+`digit.csv.xz` contains compressed data for recognition of digits.
 
 Compile the digit treatment by `make example` in the Horn part, then
 run the command `digit`. This command will ask you to choose the digit
