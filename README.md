@@ -124,7 +124,7 @@ The following list of examples is adapted from [UCI Machine Learning
 Repository](http://archive.ics.uci.edu/ml/) and prepared to be treated
 by learning aforemented learning algorithms:
 
- - **accent-fr**          (English speakers wth French accent),
+ - **accent-fr**          (English speakers with French accent),
  - **banknotes**          (non-forged banknotes recognition),
  - **divorce**            (divorce prediction),
  - **letter-recognition** (recognition of letter A),
