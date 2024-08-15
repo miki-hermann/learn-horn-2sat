@@ -1,21 +1,27 @@
 .PHONY: compile install clean scratch
 
+BIN = bin
+# FLAGS := -O4 -Wfatal-errors
+FLAGS := -O4 -march=native -flto -fopenmp -Wfatal-errors
+# FLAGS := -g -Og -fopenmp -Wfatal-errors -fsanitize=undefined -fsanitize=address
+# FLAGS := -g -fsanitize=undefined -fsanitize=address
+
 compile: learn-2sat
 
 learn-2sat: matrix+formula.o common.o bucket.o learn-2sat.o
-	g++ -O4 -o learn-2sat learn-2sat.o bucket.o common.o matrix+formula.o
+	g++ $(FLAGS) -o learn-2sat learn-2sat.o bucket.o common.o matrix+formula.o
 
 learn-2sat.o: matrix+formula.hpp common.hpp bucket.hpp learn-2sat.cpp
-	g++ -O4 -c -o learn-2sat.o learn-2sat.cpp
+	g++ $(FLAGS) -c -o learn-2sat.o learn-2sat.cpp
 
 bucket.o: matrix+formula.hpp common.hpp bucket.hpp bucket.cpp
-	g++ -O4 -c -o bucket.o bucket.cpp
+	g++ $(FLAGS) -c -o bucket.o bucket.cpp
 
 common.o: matrix+formula.hpp common.hpp common.cpp
-	g++ -O4 -c -o common.o common.cpp
+	g++ $(FLAGS) -c -o common.o common.cpp
 
 matrix+formula.o: matrix+formula.hpp matrix+formula.cpp
-	g++ -O4 -c -o matrix+formula.o matrix+formula.cpp
+	g++ $(FLAGS) -c -o matrix+formula.o matrix+formula.cpp
 
 clean:
 	rm -f *.o

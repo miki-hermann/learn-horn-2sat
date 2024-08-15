@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include <set>
+#include <chrono>
 #include "matrix+formula.hpp"
 #include "common.hpp"
 
@@ -89,7 +90,15 @@ int main (int argc, char **argv) {
     cout << negativeF << endl;
   }
 
+  // start clock
+  auto clock_start = chrono::high_resolution_clock::now();
+
   Formula varphi = learn_horn_formula();
+  
+  // stop the clock
+  auto clock_stop = chrono::high_resolution_clock::now();
+  auto duration = chrono::duration_cast<chrono::milliseconds>(clock_stop - clock_start);
+
   cout << "+++ produced Horn formula:" << endl;
   cout << to_string(varphi) << endl;
   unsigned ncl = varphi.size();
@@ -101,6 +110,7 @@ int main (int argc, char **argv) {
   if (!machine.empty())
     machinefile << to_machine(varphi);
 
-  cout << endl << "+++ end of run" << endl;}
+  cout << endl << "+++ Elapsed time (seconds) = " << 0.001 * duration.count() << endl;
+  cout << "+++ end of run" << endl;}
 
 ////////////////////////////////////////////////////////////////////////////////
