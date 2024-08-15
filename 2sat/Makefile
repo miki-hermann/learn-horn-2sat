@@ -1,6 +1,5 @@
 .PHONY: compile install clean scratch
 
-BIN = bin
 # FLAGS := -O4 -Wfatal-errors
 FLAGS := -O4 -march=native -flto -fopenmp -Wfatal-errors
 # FLAGS := -g -Og -fopenmp -Wfatal-errors -fsanitize=undefined -fsanitize=address
