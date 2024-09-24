@@ -128,7 +128,7 @@ int main (int argc, char **argv) {
   
   // stop the clock
   auto clock_stop = chrono::high_resolution_clock::now();
-  auto duration = chrono::duration_cast<chrono::milliseconds>(clock_stop - clock_start);
+  auto duration = chrono::duration_cast<chrono::microseconds>(clock_stop - clock_start);
 
   cout << "+++ produced 2SAT formula:" << endl;
   cout << to_string(varphi) << endl;
@@ -144,7 +144,7 @@ int main (int argc, char **argv) {
   if (TEST)
     testing(varphi);
 
-  cout << endl << "+++ Elapsed time (seconds) = " << 0.001 * duration.count() << endl;
+  cout << endl << "+++ Elapsed time (miliseconds) = " << 0.001 * duration.count() << endl;
   cout << "+++ end of run" << endl;
 }
 
