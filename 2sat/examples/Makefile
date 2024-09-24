@@ -19,6 +19,9 @@ all: accent-fr.out \
 accent-fr.out: accent-fr.csv
 	learn-2sat -i accent-fr.csv -o accent-fr.out
 
+banknotes.out: banknotes.csv
+	learn-2sat -i banknotes.csv -o banknotes.out
+
 diabetes10.out: diabetes10.csv
 	learn-2sat -i diabetes10.csv -o diabetes10.out
 
