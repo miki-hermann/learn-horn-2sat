@@ -1,7 +1,12 @@
 .PHONY: all clean scratch
 
 all: accent-fr.out \
-     diabetes10.out diabetes-280-2.out diabetes-280-3.out diabetes-280-5.out \
+     diabetes10.out \
+     diabetes-280-2.out \
+     diabetes-280-3.out \
+     diabetes-280-5.out \
+     diabetes-280-6.out \
+     diabetes-280-7.out \
 	divorce.out \
 	graph24000.out \
 	prime.out \
@@ -33,6 +38,12 @@ diabetes-280-3.out: diabetes-280-3.csv
 
 diabetes-280-5.out: diabetes-280-5.csv
 	learn-2sat -i diabetes-280-5.csv -o diabetes-280-5.out
+
+diabetes-280-6.out: diabetes-280-6.csv
+	learn-2sat -i diabetes-280-6.csv -o diabetes-280-6.out
+
+diabetes-280-7.out: diabetes-280-7.csv
+	learn-2sat -i diabetes-280-7.csv -o diabetes-280-7.out
 
 diabetes.out: diabetes.csv
 	learn-2sat -i diabetes.csv -o diabetes.out | true
