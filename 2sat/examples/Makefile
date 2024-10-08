@@ -7,6 +7,10 @@ all: accent-fr.out \
      diabetes-280-5.out \
      diabetes-280-6.out \
      diabetes-280-7.out \
+	pendigits-0.out \
+	pendigits-3.out \
+	pendigits-4.out \
+	pendigits-6.out \
 	divorce.out \
 	graph24000.out \
 	prime.out \
@@ -62,6 +66,18 @@ monks-2.out: monks-2.csv
 
 monks-3.out: monks-3.csv
 	learn-2sat -i monks-3.csv -o monks-3.out | true
+
+pendigits-0.out: pendigits-0.csv
+	learn-2sat -i pendigits-0.csv -o pendigits-0.out
+
+pendigits-3.out: pendigits-3.csv
+	learn-2sat -i pendigits-3.csv -o pendigits-3.out
+
+pendigits-4.out: pendigits-4.csv
+	learn-2sat -i pendigits-4.csv -o pendigits-4.out
+
+pendigits-6.out: pendigits-6.csv
+	learn-2sat -i pendigits-6.csv -o pendigits-6.out
 
 prime.out: prime.csv
 	learn-2sat -i prime.csv -o prime.out
