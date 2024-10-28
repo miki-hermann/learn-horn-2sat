@@ -120,6 +120,9 @@ each vertex is labeled by a number. The task is to construct a formula
 recognizing the graph. Surprisingly, a 2SAT formula with 65 clauses is
 sufficient.
 
+The files `pendigits-X.csv`, for `X = 0, 3, 4, 6`, are taken from [UCI Machine Learning
+Repository](https://archive.ics.uci.edu/dataset/81/pen+based+recognition+of+handwritten+digits/) example for recognition of handwritten digits 0, 3, 4, and 6.
+
 The following list of examples is adapted from [UCI Machine Learning
 Repository](http://archive.ics.uci.edu/ml/) and prepared to be treated
 by learning aforemented learning algorithms:
@@ -128,6 +131,7 @@ by learning aforemented learning algorithms:
  - **banknotes**          (non-forged banknotes recognition),
  - **divorce**            (divorce prediction),
  - **letter-recognition** (recognition of letter A),
+ - **pendigits**          (pen-based recognition of handwritten digits),
  - **shuttle** ([shuttle
    dataset](https://archive.ics.uci.edu/ml/datasets/Statlog+(Shuttle))
    for recognizing bypass)
